@@ -24,10 +24,10 @@ keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
 -- undo tree
-vim.keymap.set("n", "<C-u>", "<cmd>UndotreeToggle<CR>", { desc = "Toggle Undotree" })
+vim.keymap.set("n", "<leader>b", "<cmd>UndotreeToggle<CR>", { desc = "Toggle Undotree" })
 
 -- Nvim-Tree Toggle
-vim.keymap.set("n", "<C-b>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
+vim.keymap.set("n", "<leader>b", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle NvimTree" })
 
 -- Telescope
 vim.keymap.set("n","<leader>ff","<cmd>Telescope find_files<CR>",{desc = "fuzzy finder file search"})

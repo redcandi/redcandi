@@ -15,6 +15,7 @@ return {
         rust = "rustc $fileName && ./$(basename $fileName .rs)",
         c = "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
         cpp = "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
+        asm =  "as $fileName -o $fileNameWithoutExt.o && ld $fileNameWithoutExt.o -o $fileNameWithoutExt && ./$fileNameWithoutExt",
         javascript = "node",
         lua = "lua",
         sh = "bash",

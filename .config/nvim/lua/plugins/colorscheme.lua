@@ -1,32 +1,25 @@
 return {
   {
-    "tiagovla/tokyodark.nvim",
-    opts = {
-      transparent_background = false,
-      gamma = 1.00,
-    },
-    config = function(_, opts)
-      require("tokyodark").setup(opts)
-    end,
-  },
-  {
     "catppuccin/nvim",
     name = "catppuccin",
-    opts = {
-      flavour = "mocha", -- This gives the lavender feel you're after
-      transparent_background = false,
-      integrations = {
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        telescope = true,
-        notify = true,
-        mini = true,
-      },
-    },
-    config = function(_, opts)
-      require("catppuccin").setup(opts)
-      vim.cmd([[colorscheme catppuccin]])
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
+        transparent_background = false,
+        integrations = {
+          nvimtree = true,
+          telescope = true,
+          treesitter = true,
+          cmp = true,
+          gitsigns = true,
+          lsp_trouble = true,
+          which_key = true,
+          illuminate = true,
+        },
+      })
+
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
 }
